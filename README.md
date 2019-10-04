@@ -37,3 +37,14 @@ The requirements for this project are as follows:
 ## Go Further
 
 After you finish with these requirements, spend the rest of the time improving coverage on your unit tests, improving the UI tests and improving overall performance.
+
+
+## Unit Test Bugs:
+1. Fix "tools:context" section on activity_main.xml & activity_details_view.xml.
+2. Fix how name is displayed (add .append(" ") and remove .toLowerCase() from buildDisplayName in the OfficialOverview class).
+3. Fix app from crashing by moving the id argument out of primary constructor and into the body of CongressPersonProfileViewModel.
+
+## Performance Bugs:
+1. Remove unused code.
+2. Remove util method from onCreate section of MainActivity & DetailsActivity.
+3. Remove runOnUiThread from MainActivity & DetailsActivity.
