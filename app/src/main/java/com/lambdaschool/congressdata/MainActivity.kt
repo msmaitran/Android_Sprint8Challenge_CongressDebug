@@ -12,29 +12,6 @@ import android.support.v7.widget.RecyclerView
 import android.util.TypedValue
 import android.widget.TextView
 
-
-/*public class MainActivity extends LifecycleActivity  {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ListView listView = (ListView) findViewById(R.id.list);
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbar);
-        progressBar.setVisibility(View.VISIBLE);
-        MainActivityViewModel model = ViewModelProviders.of(this).get(MainActivityViewModel.class);
-        model.getFruitList().observe(this, fruitlist -> {
-            // update UI
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                    android.R.layout.simple_list_item_1, android.R.id.text1, fruitlist);
-            // Assign adapter to ListView
-            listView.setAdapter(adapter);
-            progressBar.setVisibility(View.GONE);
-        });
-    }
-}*/
-
-
 class MainActivity : AppCompatActivity() {
 
     private var layoutList: RecyclerView? = null
@@ -48,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         private set
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        themeUtils.onActivityCreateSetTheme(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -62,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(CongresspersonListViewModel::class.java!!)
 
         viewModel.overviewList?.observe(this, Observer { overviewList ->
-            runOnUiThread {
+
                 assert(overviewList != null)
 
                 // using recycler view
@@ -70,12 +47,7 @@ class MainActivity : AppCompatActivity() {
                     listAdapter = OverviewListAdapter(overviewList)
                     layoutList!!.adapter = listAdapter
                 }
-                // using scroll view
-                /*for (OfficialOverview officialOverview : overviewList) {
-                scrollData.addView(getDefaultTextView(officialOverview.getDisplayName(),
-                                                      officialOverview.getId()));
-            }*/
-            }
+
         })
     }
 
