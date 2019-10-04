@@ -23,15 +23,15 @@ class DetailsActivityUITest {
     var activityScenarioRule = ActivityScenarioRule(DetailsActivity::class.java)
 
     @Test
-    fun detailsActivity() {
-        // Setup
-        val profileName = "Robert B. Aderholt"
+    fun congresspersonCheck() {
+        // Setup (Details from activity_details_view.xml file)
+        val profileName = "Trent P. Kelly"
         val profileParty = "Republican"
-        val profileDistrict = "AL - District 4"
+        val profileDistrict = "Mississippi - District 10"
         val profileTwitter = "Twitter"
         val profileFacebook = "Facebook"
-        val profileMap = "1203 Longworth House Office Building"
-
+        val profileMap = "1721 Longworth House Office Building"
+        val profilePhone = "202-225-4306"
 
         onView(withId(R.id.profile_name)).check(matches(withText(profileName)))
         onView(withId(R.id.profile_party)).check(matches(withText(profileParty)))
@@ -39,6 +39,6 @@ class DetailsActivityUITest {
         onView(withId(R.id.profile_twitter)).check(matches(withText(profileTwitter)))
         onView(withId(R.id.profile_facebook)).check(matches(withText(profileFacebook)))
         onView(withId(R.id.profile_map)).check(matches(withText(profileMap)))
-
+        onView(withId(R.id.profile_phone)).check(matches(withText(profilePhone)))
     }
 }
